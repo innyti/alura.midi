@@ -4,22 +4,14 @@ function tocaSom (idElementoAudio) {
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
 
-let contador = 0;
+for (let contador = 0; contador < listaDeTeclas.length; contador++) {
 
-while (contador < listaDeTeclas.length) {
-
-    const tecla = listaDeTeclas[contador]
+    const tecla = listaDeTeclas[contador];
     const instrumento = tecla.classList[1];
-    //templete string 
-    const idAudio = `#som_${instrumento}`;
-
-    console.log(idAudio);
-
+    const idAudio = `#som_${instrumento}`; //isso é uma templete string 
+       
     tecla.onclick = function () {
         tocaSom(idAudio);
     }
 
-    contador = contador + 1;
-
-    console.log(contador);
 }
